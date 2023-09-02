@@ -1,0 +1,23 @@
+:root {
+    --border-color: rgb(150, 150, 150);
+    --h1-color: #226ea1;
+    --h2-color: rgb(75, 75, 75);
+    --input-color: rgb(100, 100, 100);
+}
+
+@keyframes font-pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.02);}
+    100% {transform: scale(1);}
+}
+
+@keyframes box-pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+
+  @keyframes fadein {
+    from {top:-50px; opacity:0}
+    to {top:0; opacity:1}
+}
