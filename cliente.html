@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente</title>
+    <link rel="stylesheet" href="css/cliente.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-    <img id="foto-usuario" src="" alt="foto-usuario">
+    <nav id="nav-container">
+        <div id="nav-container-left">
+            <p id="nav-logo" class="nav-item">LOJA</p>
+            <a class="nav-item" href="">Cliente</a>
+            <a class="nav-item" href="">Produto</a>
+            <a class="nav-item" href="">Usuário</a>
+        </div>
+
+        <div id="nav-container-right">
+            <p class="nav-item" id="email-usuario"></p>
+            <a class="nav-item" id="botao-logout" href="">Sair</a>
+            <img class="nav-item" id="foto-usuario" src="" alt="foto-usuario">
+        </div>
+
+    </nav>
+
     <p id="id-usuario"></p>
     <h1 id="nome-usuario"></h1>
     <h2 id="perfil-usuario"></h2>
-    <p id="email-usuario"></p>
     <p id="data-cadastro-usuario"></p>
     <p id="token-usuario"></p>
 
