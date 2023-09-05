@@ -1,17 +1,34 @@
 let modalAviso = document.getElementById('modal-aviso')
-let modalAvisoMesagem = document.getElementById('modal-aviso-mensagem')
-let modalBotaoFechar = document.getElementById('modal-aviso-botao-fechar')
+let modalAvisoMensagem = document.getElementById('modal-aviso-mensagem')
+let modalAvisoBotaoFechar = document.getElementById('modal-aviso-fechar')
+let modalGrande = document.getElementById('modal-grande')
+let modalGrandeTitulo = document.getElementById('modal-grande-titulo')
+let modalGrandeMensagem = document.getElementById('modal-grande-mensagem')
+let modalGrandeBotaoFechar = document.getElementById('modal-grande-fechar')
 
-modalBotaoFechar.addEventListener('click', () => {
+modalAvisoBotaoFechar.addEventListener('click', () => {
     modalAvisoFechar()
 })
 
+modalGrandeBotaoFechar.addEventListener('click', () => {
+    modalGrandeFechar()
+})
+
+
 function modalAvisoAbrir(mensagem){
-    modalAvisoMesagem.textContent = mensagem
+    modalAvisoMensagem.textContent = mensagem
     modalAviso.style.display = "block"
+}
+
+function modalGrandeAbrir(titulo,cliente){
+    modalGrandeTitulo.textContent = titulo
+    modalGrande.style.display = "block"
+}
+
+function modalGrandeFechar(){
+    modalGrande.style.display = "none"
 }
 
 function modalAvisoFechar(){
     modalAviso.style.display = "none"
-    modalAvisoMesagem.textContent = ""
 }

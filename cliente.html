@@ -9,29 +9,90 @@
     <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-    <nav id="nav-container">
-        <div id="nav-container-left">
-            <p id="nav-logo" class="nav-item">LOJA</p>
-            <a class="nav-item" href="">Cliente</a>
-            <a class="nav-item" href="">Produto</a>
-            <a class="nav-item" href="">Usuário</a>
+
+    <!-- Navegação -->
+    <header>
+        <nav id="nav-container">
+            <div id="nav-container-left">
+                <p id="nav-logo" class="nav-item">LOJA</p>
+                <a class="nav-item" href="">Clientes</a>
+                <a class="nav-item" href="">Produtos</a>
+                <a class="nav-item" href="">Usuários</a>
+            </div>
+    
+            <div id="nav-container-right">
+                <p class="nav-item" id="perfil-usuario"></p>
+                <p class="nav-item" id="email-usuario"></p>
+                <a class="nav-item" id="botao-logout" href="">Sair</a>
+                <img class="nav-item" id="foto-usuario" src="" alt="foto-usuario">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tabela-->
+    <main>
+        <h1 id="titulo">Clientes</h1>
+        <button id="botao-adcionar-cliente">Adcionar Cliente</button>
+        <hr>
+        <table id="tabela">
+            <thead id="tabela-head"> 
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Data Cadastro</th>
+                    <th>Ferramentas</th> 
+                </tr>               
+            </thead>
+            <tbody id="tabela-body">   
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal-aviso" class="modal">
+        <div class="modal-conteudo">
+            <div class="modal-header">
+                <span id="modal-aviso-fechar" class="modal-botao-fechar">&times;</span>
+                <p>Aviso</p>
+            </div>
+            <div class="modal-body">
+                <p id="modal-aviso-mensagem"></p>
+            </div>
         </div>
+    </div>
 
-        <div id="nav-container-right">
-            <p class="nav-item" id="email-usuario"></p>
-            <a class="nav-item" id="botao-logout" href="">Sair</a>
-            <img class="nav-item" id="foto-usuario" src="" alt="foto-usuario">
+    <div id="modal-grande" class="modal">
+        <div id="modal-grande-conteudo">
+            <div class="modal-header">
+                <span id="modal-grande-fechar" class="modal-botao-fechar">&times;</span>
+                <p id="modal-grande-titulo"></p>
+            </div>
+            <div id="modal-grande-body">
+                <div id="modal-container-id" class="modal-input">
+                    <label for="modalclientid">ID</label>
+                    <input disabled ="text" id="modalclientid" name="modalclientid">
+                </div>
+                <div id="modal-container-nome" class="modal-input">
+                    <label for="modalclientnome">Nome</label>
+                    <input type="text"  id="modalclientenome" name="modalclientnome">
+                </div>
+                <div id="modal-container-cpf"  class="modal-input">
+                    <label for="modalclientcpf">CPF</label>
+                    <input type="text"  name="modalclientcpf">
+                </div>
+                <div class="modal-input">
+                    <label for="modalclientid">E-Mail</label>
+                    <input type="email" name="modalclientid">
+                </div>
+            </div>
         </div>
-
-    </nav>
-
-    <p id="id-usuario"></p>
-    <h1 id="nome-usuario"></h1>
-    <h2 id="perfil-usuario"></h2>
-    <p id="data-cadastro-usuario"></p>
-    <p id="token-usuario"></p>
+    </div>
 
     <script src="js/usuarioCredenciais.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/cliente.js"></script>
 </body>
 </html>

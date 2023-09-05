@@ -16,7 +16,7 @@
     background-color: white;
     padding: 0px;
     border: 1px solid var(--border-color);
-    border-radius: 3px;
+    border-radius: 5px;
     min-height: 25px;
     width: 80%;
     max-width: 500px; 
@@ -56,3 +56,55 @@
     background-color: white;
     color: var(--h2-color);
 }
+
+#modal-grande-conteudo{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
+    position: relative;
+    background-color: white;
+    padding: 0px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    min-height: 25px;;
+    width: 600px;
+    margin: auto;
+    animation-name: fadein;
+    animation-duration: 0.4s;
+}
+
+.modal-input>label{
+    text-indent: 3px;
+    font-weight: 700;
+    display: block;
+    margin: 10px 10px 0px 10px;
+    color: var(--h2-color);
+    width: fit-content;
+
+}
+
+
+.modal-input>input{
+    border: 1px solid var(--border-color);
+    color: var(--input-color);
+    border-radius: 3px;
+    display: block;
+    margin: 0px 10px 10px 10px;
+    text-indent: 5px;
+    height: 25px;
+}
+
+
+#modal-grande-body{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 300px;
+}
+
+#modalclientid{
+    background-color: var(--border-color);
+    flex-shrink: 5;
+}
+
+.modal-input{
+    width: 200px;
+}
+
