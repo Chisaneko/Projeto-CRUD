@@ -1,10 +1,28 @@
 const url = 'http://localhost:3400/clientes'
 
+class Cliente{
+    constructor(obj) {
+        obj = obj || {}
+
+        this.id = obj.id
+        this.nome = obj.nome
+        this.cpfOuCnpj = obj.cpfOuCnpj
+        this.email = obj.email
+        this.telefone = obj.telefone
+        this.dataCadastro = obj.dataCadastro
+    }
+}
+
 //====================================================
 
 let modoEdicao = false
 let clientFetchData = []
 let tableBody = document.getElementById('tabela-body')
+let modalId       = document.getElementById('modalclientid')
+let modalEmail    = document.getElementById('modalclientemail') 
+let modalNome     = document.getElementById('modalclientnome')
+let modalCpf      = document.getElementById('modalclientcpf')  
+let modalTelefone = document.getElementById('modalclientphone')
 
 //TABELA =============================================
 
@@ -47,16 +65,88 @@ function addClientTableRow(clientes){
 
 // BOTÕES ============================================
 
+function adcionarCliente(){
+    modoEdicao = false
+    limparModalCliente()
+    modalGrandeAbrir("Adcionar Cliente")
+
+}
+
+function pegarClienteModal(){
+    return new Cliente({
+        id: modalId.value,
+        nome: modalNome.value,
+        email: modalEmail.value,
+        telefone: modalTelefone.value,
+        cpfOuCnpj:modalCpf.value,
+    })
+}
+
+function salvarCliente(){
+    let cliente = pegarClienteModal()
+    if (!cliente.email || !cliente.nome || !cliente.cpfOuCnpj || !cliente.telefone){
+        modalAvisoAbrir("Todos os campos são obrigatórios")
+        return
+    }
+    if (modoEdicao == true){
+        return
+    }
+    adcionarClienteBackend(cliente)
+
+}
 function editarCliente(clientId){
-    modalGrandeAbrir("Editar Cliente",clientId)
-   // modalAvisoAbrir(`Editando o cliente nº ${clientId}`)
+    modoEdicao = true
+    modalGrandeAbrir("Editar Cliente")
+    let cliente = clientFetchData.find(cliente => cliente.id == clientId)
+    atualizarModalCliente(cliente)
 }
 
 function excluirCliente(clienteId){
 
 }
 
+
+function limparModalCliente(){
+    modalId.value = ""
+    modalEmail.value = ""
+    modalNome.value = ""
+    modalCpf .value = ""
+    modalTelefone.value = ""
+}
+
+function atualizarModalCliente(cliente){
+    modalId.value = cliente.id
+    modalEmail.value = cliente.email
+    modalNome.value =  cliente.nome 
+    modalCpf.value =  cliente.cpfOuCnpj
+    modalTelefone.value = cliente.telefone
+}
+
+
 // CRUD ==============================================
+
+function adcionarClienteBackend(cliente){
+    cliente.dataCadastro = new Date().toISOString()
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Aurhorization': "token"
+        },
+        body: JSON.stringify(cliente)
+    })
+    .then(response => response.json())
+    .then(response => {
+        let novoCliente = new Cliente(response)
+        clientFetchData.push(novoCliente)
+        updateClientTableRow(clientFetchData)
+        modalGrandeFechar()
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
 
 function obterClientes(){
     fetch(url, {

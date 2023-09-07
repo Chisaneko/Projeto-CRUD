@@ -12,6 +12,7 @@ modalAvisoBotaoFechar.addEventListener('click', () => {
 
 modalGrandeBotaoFechar.addEventListener('click', () => {
     modalGrandeFechar()
+    
 })
 
 
@@ -20,12 +21,13 @@ function modalAvisoAbrir(mensagem){
     modalAviso.style.display = "block"
 }
 
-function modalGrandeAbrir(titulo,cliente){
+function modalGrandeAbrir(titulo){
     modalGrandeTitulo.textContent = titulo
     modalGrande.style.display = "block"
 }
 
 function modalGrandeFechar(){
+    modoEdicao = false
     modalGrande.style.display = "none"
 }
 

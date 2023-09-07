@@ -21,8 +21,8 @@
             </div>
     
             <div id="nav-container-right">
-                <p class="nav-item" id="perfil-usuario"></p>
                 <p class="nav-item" id="email-usuario"></p>
+                <p class="nav-item" id="nome-usuario"></p>
                 <a class="nav-item" id="botao-logout" href="">Sair</a>
                 <img class="nav-item" id="foto-usuario" src="" alt="foto-usuario">
             </div>
@@ -32,7 +32,7 @@
     <!-- Tabela-->
     <main>
         <h1 id="titulo">Clientes</h1>
-        <button id="botao-adcionar-cliente">Adcionar Cliente</button>
+        <button onclick="adcionarCliente()" id="botao-adcionar-cliente">Adcionar Cliente</button>
         <hr>
         <table id="tabela">
             <thead id="tabela-head"> 
@@ -52,17 +52,7 @@
     </main>
 
     <!-- Modal -->
-    <div id="modal-aviso" class="modal">
-        <div class="modal-conteudo">
-            <div class="modal-header">
-                <span id="modal-aviso-fechar" class="modal-botao-fechar">&times;</span>
-                <p>Aviso</p>
-            </div>
-            <div class="modal-body">
-                <p id="modal-aviso-mensagem"></p>
-            </div>
-        </div>
-    </div>
+
 
     <div id="modal-grande" class="modal">
         <div id="modal-grande-conteudo">
@@ -71,22 +61,48 @@
                 <p id="modal-grande-titulo"></p>
             </div>
             <div id="modal-grande-body">
-                <div id="modal-container-id" class="modal-input">
-                    <label for="modalclientid">ID</label>
-                    <input disabled ="text" id="modalclientid" name="modalclientid">
+                <div class="modal-row">
+                    <div id="modal-container-id" class="modal-input">
+                        <label for="modalclientid">ID</label>
+                        <input class="small-row" disabled type="text" id="modalclientid" name="modalclientid">
+                    </div>
                 </div>
-                <div id="modal-container-nome" class="modal-input">
-                    <label for="modalclientnome">Nome</label>
-                    <input type="text"  id="modalclientenome" name="modalclientnome">
+                <div class="modal-row">
+                    <div id="modal-container-nome" class="modal-input">
+                        <label for="modalclientnome">Nome</label>
+                        <input class="vbig-row" type="text"  id="modalclientnome" name="modalclientnome">
+                    </div>
+                    <div id="modal-container-cpf"  class="modal-input">
+                        <label for="modalclientcpf">CPF</label>
+                        <input class="big-row" type="text" id="modalclientcpf" name="modalclientcpf">
+                    </div>
                 </div>
-                <div id="modal-container-cpf"  class="modal-input">
-                    <label for="modalclientcpf">CPF</label>
-                    <input type="text"  name="modalclientcpf">
+                <div class="modal-row">
+                    <div class="modal-input">
+                        <label for="modalclientemail">E-Mail</label>
+                        <input class="ebig-row" type="email" id="modalclientemail" name="modalclientemail">
+                    </div>   
+                    <div class="modal-input">
+                        <label for="modalclientphone">Telefone</label>
+                        <input class="medium-row" type="tel" id="modalclientphone" name="modalclientphone">
+                    </div>
                 </div>
-                <div class="modal-input">
-                    <label for="modalclientid">E-Mail</label>
-                    <input type="email" name="modalclientid">
+                <div class="modal-row flex-end bigline-row">
+                    <button onclick="salvarCliente()" class="medium-row modal-button">Salvar</button>
+                    <button onclick="modalGrandeFechar()" class="medium-row modal-button">Cancelar</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-aviso" class="modal">
+        <div class="modal-conteudo">
+            <div class="modal-header">
+                <span id="modal-aviso-fechar" class="modal-botao-fechar">&times;</span>
+                <p>Aviso</p>
+            </div>
+            <div class="modal-body">
+                <p id="modal-aviso-mensagem"></p>
             </div>
         </div>
     </div>

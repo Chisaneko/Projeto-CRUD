@@ -89,14 +89,17 @@
     display: block;
     margin: 0px 10px 10px 10px;
     text-indent: 5px;
-    height: 25px;
 }
+
+input:hover{
+    cursor:text;
+}
+
 
 
 #modal-grande-body{
     display: flex;
-    flex-wrap: nowrap;
-    width: 300px;
+    flex-wrap: wrap;
 }
 
 #modalclientid{
@@ -104,7 +107,55 @@
     flex-shrink: 5;
 }
 
-.modal-input{
-    width: 200px;
+.modal-row{
+    display: flex;
+    width: 100%;
 }
 
+.small-row{
+    width: 65px;
+}
+
+.medium-row{
+    width: 140px;
+}
+
+.big-row{
+    width: 215px;
+}
+
+.vbig-row{
+    width: 290px;
+}
+
+.ebig-row{
+    width: 365px;
+}
+
+.small-row,.medium-row,.big-row,.vbig-row,.ebig-row{
+    margin: 10px;
+    height: 30px;
+}
+
+.modal-button{
+    float: inline-end;
+    color: white;
+    background-color: var(--h1-color);
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    align-self: center;
+}
+
+.modal-button:hover{
+    cursor: pointer;
+    background-color: var(--border-color);
+}
+
+.flex-end{
+    justify-content: center;
+}
+
+.bigline-row{
+    height: 75px;
+}
