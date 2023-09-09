@@ -22,14 +22,6 @@ loginBotaoEntrar.addEventListener('click', () =>{
     loginAutenticarUsuario(loginInputEmail.value,loginInputSenha.value)
 })
 
-function salvarTokenUsuario(token) {
-    localStorage.setItem('token', token)
-}
-
-function salvarEmailUsuario(usuario) {
-    localStorage.setItem('usuario', JSON.stringify(usuario))
-}
-
 
 function loginAutenticarUsuario (email,senha){
     const urlBase = 'http://localhost:3400'

@@ -23,7 +23,7 @@
             <div id="nav-container-right">
                 <p class="nav-item" id="email-usuario"></p>
                 <p class="nav-item" id="nome-usuario"></p>
-                <a class="nav-item" id="botao-logout" href="">Sair</a>
+                <a onclick="sairDoSistema()" class="nav-item" id="botao-logout" href="">Sair</a>
                 <img class="nav-item" id="foto-usuario" src="" alt="foto-usuario">
             </div>
         </nav>
@@ -62,34 +62,36 @@
             </div>
             <div id="modal-grande-body">
                 <div class="modal-row">
-                    <div id="modal-container-id" class="modal-input">
+                    <div id="modal-container-id" class="modal-input row-size-1">
                         <label for="modalclientid">ID</label>
-                        <input class="small-row" disabled type="text" id="modalclientid" name="modalclientid">
+                        <input type="text" disabled class="disabled" id="modalclientid" name="modalclientid">
                     </div>
-                </div>
-                <div class="modal-row">
-                    <div id="modal-container-nome" class="modal-input">
+                    <div id="modal-container-nome" class="modal-input row-size-11">
                         <label for="modalclientnome">Nome</label>
-                        <input class="vbig-row" type="text"  id="modalclientnome" name="modalclientnome">
-                    </div>
-                    <div id="modal-container-cpf"  class="modal-input">
-                        <label for="modalclientcpf">CPF</label>
-                        <input class="big-row" type="text" id="modalclientcpf" name="modalclientcpf">
+                        <input type="text"  id="modalclientnome" name="modalclientnome">
                     </div>
                 </div>
                 <div class="modal-row">
-                    <div class="modal-input">
+                    <div id="modal-container-cpf"  class="modal-input row-size-3">
+                        <label for="modalclientcpf">CPF</label>
+                        <input ype="text" id="modalclientcpf" name="modalclientcpf">
+                    </div>
+                    <div class="modal-input row-size-3" >
                         <label for="modalclientemail">E-Mail</label>
-                        <input class="ebig-row" type="email" id="modalclientemail" name="modalclientemail">
+                        <input ype="email" id="modalclientemail" name="modalclientemail">
                     </div>   
-                    <div class="modal-input">
+                    <div class="modal-input row-size-3">
                         <label for="modalclientphone">Telefone</label>
-                        <input class="medium-row" type="tel" id="modalclientphone" name="modalclientphone">
+                        <input type="tel" id="modalclientphone" name="modalclientphone">
+                    </div>
+                    <div class="modal-input row-size-3">
+                        <label  for="modalclientdata">Data Cadastro</label>
+                        <input disabled type="text" class="disabled" id="modalclientdata" name="modalclientdata">
                     </div>
                 </div>
                 <div class="modal-row flex-end bigline-row">
-                    <button onclick="salvarCliente()" class="medium-row modal-button">Salvar</button>
-                    <button onclick="modalGrandeFechar()" class="medium-row modal-button">Cancelar</button>
+                    <button onclick="salvarCliente()" class="row-size-3 modal-button">Salvar</button>
+                    <button onclick="modalGrandeFechar()" class="row-size-3 modal-button">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -107,6 +109,7 @@
         </div>
     </div>
 
+    <script src="js/base.js"></script>
     <script src="js/usuarioCredenciais.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/cliente.js"></script>
